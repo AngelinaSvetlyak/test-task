@@ -1,0 +1,363 @@
+:root{
+    --main-color: #85c8de;
+    --second-color: #545454;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: var(--second-color);
+}
+
+div,p,a,ul,li{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+p{
+    line-height: 1.6em;
+}
+
+.container{
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items:center; 
+}
+
+#menu__toggle {
+    opacity: 0;
+  }
+ 
+.menu__btn {
+    display: flex;
+    align-items: center; 
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+}
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color:var(--second-color);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  }
+
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menu__item:hover {
+    background-color: var(--main-color);
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+
+  .menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+.header{
+    background: linear-gradient(white, var(--main-color));
+    padding-top: 20px;
+    padding-bottom: 0;
+    color:black;
+}
+.promo{
+    width: 580px; 
+}
+
+.promo__content{
+    margin-top: 47px;
+    font-size: 16px;
+    margin-bottom: 42px;
+    width: 405px;
+}
+
+.title{
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.title:hover{
+    transform: scale(1.1);
+    transition: all .3s;
+}
+
+.title-text{
+    font-size: 17px;
+}
+
+
+.my_photo{
+    margin-top: 60px;
+}
+
+.section-title{
+    font-size: 30px;
+    text-align: center;
+    color: var(--second-color);
+    position: relative;
+}
+
+.section-title:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; 
+    background-color: var(--second-color); /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+
+.section-title:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px; /* Высота линии */
+    background-color: var(--main-color); /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+}
+
+.information{
+    padding-top: 108px;
+    padding-bottom: 120px;
+}
+
+.layout-4-column{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 65px;
+}
+
+.info{
+    width: 289px;
+    background: url(img/e-mail.png) no-repeat top;
+    text-align: center; 
+}
+
+.info:hover{
+    transform: scale(1.1);
+    transition: all .3s;
+}
+
+.info_phone{
+    background: url(img/phone.png) no-repeat top;
+}
+
+.info_address{
+    background: url(img/address.png) no-repeat top;
+}
+
+.info_telegram{
+    background: url(img/telegram.png) no-repeat top;
+}
+
+.info-title{
+    font-size: 19px;
+    margin-top: 100px;
+    margin-bottom: 17px;
+}
+
+.info-text{
+    margin-top: 7px;  
+    text-decoration: none;
+    color: var(--second-color);
+}
+
+.edu{
+  width: 80%;
+  max-width: 550px;
+  margin: 2em auto;
+  padding: 4em;
+  background: var(--main-color);
+  box-shadow: 0 0 5em 5em white inset;
+}
+
+.edu:hover{
+    transform: scale(1.1);
+    transition: all .3s;
+}
+
+.layout-2-column{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+.skill_{
+    text-align: center;
+    justify-content: space-evenly;
+    display: flex;
+    padding-top: 30px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.skill{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.skill-text{
+    padding-right: 20px;
+    font-size: 17px;
+}
+
+.language{
+    text-align: center;
+    justify-content:center;
+    margin-top: 30px;
+    padding-bottom: 80px;
+}
+
+.lang{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:center;
+    align-items: center;
+}
+
+.languages{
+    background: linear-gradient(white, var(--main-color));
+}
+
+@media screen and (max-width: 1200px) {
+    .container{
+        width: 960px;
+    }
+    .my_photo{
+        width: 570px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container{
+        width: 720px;
+    }
+    .wrapper{
+        flex-direction: column;
+    }
+    .promo{
+        width: 100%;
+    }
+    .title-text{
+        width: 100%;
+    }
+    .my_photo{
+        display: block;
+        width: 550px;
+        margin: 60 px auto 0;
+    }
+    .layout-4-column{
+        flex-direction: column;
+    }
+    .info{
+        width: auto;
+        margin-bottom: 30px;
+    }
+    .sk{
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        width: 540px;
+    }
+    .my_photo{
+        width: 100%;
+    }
+    .layout-2-column{
+        flex-direction: column;
+    }
+    .skill_{
+        flex-direction: column;
+    } 
+}
+
+@media screen and (max-width: 576px) {
+    .container{
+        width: 90%;
+    }
+}
+
